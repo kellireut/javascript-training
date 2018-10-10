@@ -1,0 +1,268 @@
+* {
+  -webkit-box-sizing: content-box;
+          box-sizing: content-box;
+  margin: 0;
+  padding: 0;
+  font-family: 'PT Sans Narrow', sans-serif;
+  letter-spacing: .02em;
+  -webkit-transition: all .2s ease;
+  transition: all .2s ease;
+}
+
+li {
+  list-style: none;
+}
+
+body {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  height: 100vh;
+}
+
+menu {
+  -ms-flex-preferred-size: 90px;
+      flex-basis: 90px;
+  background: -webkit-gradient(linear, left top, left bottom, from(#E35736), to(#EA8F4A));
+  background: linear-gradient(#E35736, #EA8F4A);
+}
+
+menu ul {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: column;
+          flex-direction: column;
+  margin-top: 10px;
+}
+
+menu li {
+  margin: 12px 20px;
+  text-align: center;
+}
+
+menu li::after {
+  content: "";
+  display: block;
+  width: 100%;
+  border-bottom: 1px solid rgba(255, 255, 255, 0.6);
+  margin-top: 15px;
+}
+
+menu li:last-of-type img {
+  -webkit-transform: scale(0.75);
+          transform: scale(0.75);
+  -webkit-transform-origin: 50% 0;
+          transform-origin: 50% 0;
+}
+
+menu li:last-of-type::after {
+  display: none;
+}
+
+main {
+  background: linear-gradient(0.4turn, #f98117, #EA8F4A, #F9E080);
+  -webkit-box-flex: 1;
+      -ms-flex-positive: 1;
+          flex-grow: 1;
+  color: #FEFD89;
+  overflow: scroll;
+  position: relative;
+}
+
+main > * {
+  max-width: 500px;
+  display: block;
+  margin: 0 auto;
+}
+
+main h2 {
+  font-size: 18px;
+  font-weight: 400;
+  margin-top: 75px;
+}
+
+main h1 {
+  text-transform: uppercase;
+  font-size: 55px;
+  line-height: 1;
+  font-weight: 700;
+  margin-bottom: 20px;
+}
+
+.item {
+  position: relative;
+  margin-bottom: 20px;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+}
+
+.item label {
+  width: 35px;
+  height: 35px;
+  border: 1px solid #FEFD89;
+  border-radius: 5px;
+  -ms-flex-negative: 0;
+      flex-shrink: 0;
+  cursor: pointer;
+}
+
+.item label::after {
+  content: "";
+  display: inline-block;
+  background-image: url(../assets/x.svg);
+  height: 25px;
+  width: 25px;
+  margin: 5px;
+}
+
+.item input[type="checkbox"] {
+  opacity: 0;
+  position: absolute;
+  top: 0;
+  left: 0;
+}
+
+.item input[type="checkbox"] + label::after {
+  content: none;
+}
+
+.item input[type="checkbox"]:checked + label::after {
+  content: "";
+}
+
+.item div {
+  padding-left: 20px;
+}
+
+.item .item-title {
+  font-size: 28px;
+  padding: 4px 0;
+  font-weight: 700;
+}
+
+.item .item-description {
+  font-size: 16px;
+  color: white;
+  line-height: 1.2em;
+}
+
+aside {
+  -ms-flex-preferred-size: 300px;
+      flex-basis: 300px;
+  background: -webkit-gradient(linear, left top, left bottom, from(#F5D47A), to(#FCF4A7));
+  background: linear-gradient(#F5D47A, #FCF4A7);
+  color: #f98117;
+  overflow: scroll;
+  position: relative;
+}
+
+aside > * {
+  margin-left: 20px;
+  margin-right: 20px;
+}
+
+aside > p {
+  font-size: 14px;
+  line-height: 1;
+  margin-top: 82px;
+}
+
+aside h1 {
+  text-transform: uppercase;
+  font-size: 36px;
+  margin-bottom: 20px;
+  line-height: 1;
+}
+
+aside label {
+  font-size: 20px;
+  color: #FFFEDB;
+  display: block;
+  text-transform: uppercase;
+  font-weight: 700;
+}
+
+aside input[type="text"], aside textarea {
+  border: 2px solid white;
+  background: white;
+  font-size: 20px;
+  color: #f98117;
+  border-radius: 3px;
+  padding: 10px;
+  margin-bottom: 20px;
+  width: calc(100% - 30px);
+}
+
+aside input[type="text"]:focus, aside input[type="text"]:active, aside textarea:focus, aside textarea:active {
+  border: 2px solid #f98117;
+  outline: none;
+}
+
+aside textarea {
+  resize: none;
+  height: 300px;
+}
+
+aside fieldset {
+  border: none;
+}
+
+aside form div {
+  text-align: right;
+}
+
+aside .add-task {
+  background: #f98117;
+  color: white;
+  font-weight: 700;
+  font-size: 20px;
+  padding: 5px 12px;
+  border: none;
+  border-radius: 3px;
+  border: 2px solid transparent;
+  cursor: pointer;
+}
+
+aside .add-task:hover, aside .add-task :focus {
+  border: 2px solid #E35736;
+  -webkit-transform: scale(1.05);
+          transform: scale(1.05);
+}
+
+aside .cancel-task {
+  background: none;
+  border: none;
+  color: #f98117;
+  font-size: 14px;
+  margin: 0 12px;
+  cursor: pointer;
+}
+
+aside .cancel-task:hover {
+  text-decoration: underline;
+}
+
+.toggle-form {
+  position: absolute;
+  background: none;
+  border: none;
+  bottom: 20px;
+  right: 0px;
+}
+
+.toggle-form img {
+  width: 25px;
+}
+
+#clock {
+  bottom: 0;
+  right: 0;
+  position: absolute;
+  margin: 0;
+  width: 190px;
+}
+/*# sourceMappingURL=styles.css.map */

@@ -1,0 +1,82 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <link rel="stylesheet" href="styles/styles.css">
+    <link href="https://fonts.googleapis.com/css?family=PT+Sans+Narrow:400,700" rel="stylesheet">
+    <title>To Do Web App</title>
+</head>
+
+<body>
+    <menu>
+        <ul>
+            <li>
+                <img src="assets/search.svg" alt="" />
+            </li>
+            <li>
+                <img src="assets/print.svg" alt="" />
+            </li>
+            <li>
+                <img src="assets/fullscreen.svg" alt="" />
+            </li>
+        </ul>
+    </menu>
+    <main class="list">
+        <h2>Well, what are you waiting for?</h2>
+        <h1>Get thee to work!</h1>
+        <ul>
+            <li class="item">
+                <input type="checkbox" id="check-1" name="check" />
+                <label for="check-1"></label>
+                <div>
+                    <p class="item-title">Item Title Here</p>
+                    <p class="item-description">Item description here and here and lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure d</p>
+                </div>
+            </li>
+            <li class="item">
+                <input type="checkbox" id="check-2" name="check" />
+                <label for="check-2"></label>
+                <div>
+                    <p class="item-title">Item Title Here</p>
+                    <p class="item-description">Item description here and here and lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure d</p>
+                </div>
+            </li>
+            <li class="item">
+                <input type="checkbox" id="check-3" name="check" />
+                <label for="check-3"></label>
+                <div>
+                    <p class="item-title">Item Title Here</p>
+                    <p class="item-description">Item description here and here and lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure d</p>
+                </div>
+            </li>
+
+        </ul>
+        <button class="toggle-form">
+            <img src="assets/toggle.svg" alt="">
+        </button>
+    </main>
+    <aside class="form">
+        <p>So you wanna get organized, huh?</p>
+        <h1>What'cha up to?</h1>
+        <form action="">
+            <fieldset>
+                <label for="item-entry--title">What is it?</label>
+                <input type="text" id="item-entry--title" placeholder="Do the laundry">
+            </fieldset>
+            <fieldset>
+                <label for="item-entry--description">A little more, perhaps?</label>
+                <textarea name="item-entry--description" id="item-entry--description" placeholder="Don't forget the dishrags"></textarea>
+            </fieldset>
+            <div>
+                <button class="add-task">Add It?</button>
+                <button class="cancel-task">Cancel</button>
+            </div>
+        </form>
+        <img src="assets/clock.svg" alt="" id="clock">
+    </aside>
+</body>
+
+</html>
