@@ -1,0 +1,109 @@
+.form {
+    flex-basis: 300px;
+    background: url(../assets/clock.svg), linear-gradient(#f5d47a, $light-yellow);
+    background-position: bottom right, top;
+    background-size: 70%, 100%;
+    background-repeat: no-repeat, no-repeat;
+    color: $orange;
+    overflow: auto;
+    position: relative;
+    height: 100%;
+    width: 100%;
+    > * {
+        margin-left: 20px;
+        margin-right: 20px;
+    }
+    > p {
+        font-size: 14px;
+        line-height: 1;
+        margin-top: 82px;
+    }
+    form {
+        margin-bottom: 20px;
+    }
+    h1 {
+        text-transform: uppercase;
+        font-size: 36px;
+        margin-bottom: 20px;
+        line-height: 1;
+    }
+    label {
+        font-size: 20px;
+        color: $almost-white;
+        display: block;
+        text-transform: uppercase;
+        font-weight: 700;
+    }
+    input[type="text"],
+    textarea {
+        border: 2px solid white;
+        background: white;
+        font-size: 20px;
+        color: $orange;
+        border-radius: 3px;
+        padding: 10px;
+        margin-bottom: 20px;
+        width: calc(100% - 30px);
+        &:focus,
+        &:active {
+            border: 2px solid $orange;
+            outline: none;
+        }
+    }
+    textarea {
+        resize: none;
+        height: 300px;
+    }
+    fieldset {
+        border: none;
+    }
+    form div {
+        text-align: right;
+    }
+    .add-task {
+        background: $orange;
+        color: white;
+        font-weight: 700;
+        font-size: 20px;
+        padding: 5px 12px;
+        border: none;
+        border-radius: 3px;
+        border: 2px solid transparent;
+        cursor: pointer;
+        &:hover,
+        :focus {
+            border: 2px solid $dark-orange;
+            transform: scale(1.05);
+        }
+    }
+    .cancel-task {
+        background: none;
+        border: none;
+        color: $orange;
+        font-size: 14px;
+        margin: 0 12px;
+        cursor: pointer;
+        &:hover {
+            text-decoration: underline;
+        }
+    }
+}
+
+.toggle-form {
+    position: absolute;
+    background: none;
+    border: none;
+    bottom: 20px;
+    right: 0px;
+    img {
+        width: 25px;
+    }
+}
+
+#clock {
+    bottom: 0;
+    right: 0;
+    position: absolute;
+    margin: 0;
+    width: 190px;
+}

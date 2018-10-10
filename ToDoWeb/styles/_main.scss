@@ -1,0 +1,83 @@
+main {
+    background: linear-gradient(0.4turn, $orange, $medium-orange, #f9e080);
+    flex-grow: 1;
+    color: $yellow;
+    overflow: auto;
+    position: relative;
+    -webkit-overflow-scrolling: touch;
+    > * {
+        max-width: 500px;
+        display: block;
+        margin: 0 auto;
+    }
+    h2 {
+        font-size: 18px;
+        font-weight: 400;
+        margin-top: 75px;
+    }
+    h1 {
+        text-transform: uppercase;
+        font-size: 55px;
+        line-height: 1;
+        font-weight: 700;
+        margin-bottom: 20px;
+    }
+}
+
+.item {
+    position: relative;
+    margin-bottom: 20px;
+    display: flex;
+    label {
+        width: 35px;
+        height: 35px;
+        border: 1px solid $yellow;
+        border-radius: 5px;
+        flex-shrink: 0;
+        transition: all 0.3s ease;
+        cursor: pointer;
+        &::after {
+            content: "";
+            display: inline-block;
+            background-color: rgba(255, 255, 255, 0.2);
+            background-image: url(../assets/x.svg);
+            background-size: 80%;
+            background-repeat: no-repeat;
+            background-position: center;
+            // height: 25px;
+            // width: 25px;
+            width: 100%;
+            height: 100%;
+            transition: all 0.3s ease;
+
+            // margin: 5px;
+        }
+    }
+
+    input[type="checkbox"] {
+        opacity: 0;
+        position: absolute;
+        top: 0;
+        left: 0;
+    }
+    input[type="checkbox"] + label::after {
+        content: none;
+    }
+    input[type="checkbox"]:checked + label::after {
+        content: "";
+    }
+
+    div {
+        padding-left: 20px;
+    }
+    .item-title {
+        font-size: 28px;
+        padding: 4px 0;
+        font-weight: 700;
+    }
+    .item-description {
+        font-size: 16px;
+        color: white;
+        line-height: 1.2em;
+    }
+}

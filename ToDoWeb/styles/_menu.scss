@@ -1,0 +1,27 @@
+menu {
+    flex-basis: 90px;
+    background: linear-gradient($dark-orange, $medium-orange);
+    ul {
+        display: flex;
+        flex-direction: column;
+        margin-top: 10px;
+    }
+    li {
+        margin: 12px 20px;
+        text-align: center;
+        &::after {
+            content: "";
+            display: block;
+            width: 100%;
+            border-bottom: 1px solid rgba(255, 255, 255, 0.6);
+            margin-top: 15px;
+        }
+        &:last-of-type img {
+            transform: scale(0.75);
+            transform-origin: 50% 0;
+        }
+        &:last-of-type::after {
+            display: none;
+        }
+    }
+}
