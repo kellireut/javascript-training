@@ -3,10 +3,10 @@
           box-sizing: content-box;
   margin: 0;
   padding: 0;
-  font-family: 'PT Sans Narrow', sans-serif;
-  letter-spacing: .02em;
-  -webkit-transition: all .2s ease;
-  transition: all .2s ease;
+  font-family: "PT Sans Narrow", sans-serif;
+  letter-spacing: 0.02em;
+  -webkit-transition: all 0.2s ease;
+  transition: all 0.2s ease;
 }
 
 li {
@@ -23,8 +23,8 @@ body {
 menu {
   -ms-flex-preferred-size: 90px;
       flex-basis: 90px;
-  background: -webkit-gradient(linear, left top, left bottom, from(#E35736), to(#EA8F4A));
-  background: linear-gradient(#E35736, #EA8F4A);
+  background: -webkit-gradient(linear, left top, left bottom, from(#e35736), to(#ea8f4a));
+  background: linear-gradient(#e35736, #ea8f4a);
 }
 
 menu ul {
@@ -63,13 +63,14 @@ menu li:last-of-type::after {
 }
 
 main {
-  background: linear-gradient(0.4turn, #f98117, #EA8F4A, #F9E080);
+  background: linear-gradient(0.4turn, #f98117, #ea8f4a, #f9e080);
   -webkit-box-flex: 1;
       -ms-flex-positive: 1;
           flex-grow: 1;
-  color: #FEFD89;
-  overflow: scroll;
+  color: #fefd89;
+  overflow: auto;
   position: relative;
+  -webkit-overflow-scrolling: touch;
 }
 
 main > * {
@@ -103,20 +104,27 @@ main h1 {
 .item label {
   width: 35px;
   height: 35px;
-  border: 1px solid #FEFD89;
+  border: 1px solid #fefd89;
   border-radius: 5px;
   -ms-flex-negative: 0;
       flex-shrink: 0;
+  -webkit-transition: all 0.3s ease;
+  transition: all 0.3s ease;
   cursor: pointer;
 }
 
 .item label::after {
   content: "";
   display: inline-block;
+  background-color: rgba(255, 255, 255, 0.2);
   background-image: url(../assets/x.svg);
-  height: 25px;
-  width: 25px;
-  margin: 5px;
+  background-size: 80%;
+  background-repeat: no-repeat;
+  background-position: center;
+  width: 100%;
+  height: 100%;
+  -webkit-transition: all 0.3s ease;
+  transition: all 0.3s ease;
 }
 
 .item input[type="checkbox"] {
@@ -150,43 +158,53 @@ main h1 {
   line-height: 1.2em;
 }
 
-aside {
+.form {
   -ms-flex-preferred-size: 300px;
       flex-basis: 300px;
-  background: -webkit-gradient(linear, left top, left bottom, from(#F5D47A), to(#FCF4A7));
-  background: linear-gradient(#F5D47A, #FCF4A7);
+  background: url(../assets/clock.svg), -webkit-gradient(linear, left top, left bottom, from(#f5d47a), to(#fcf4a7));
+  background: url(../assets/clock.svg), linear-gradient(#f5d47a, #fcf4a7);
+  background-position: bottom right, top;
+  background-size: 70%, 100%;
+  background-repeat: no-repeat, no-repeat;
   color: #f98117;
-  overflow: scroll;
+  overflow: auto;
   position: relative;
+  height: 100%;
+  width: 100%;
 }
 
-aside > * {
+.form > * {
   margin-left: 20px;
   margin-right: 20px;
 }
 
-aside > p {
+.form > p {
   font-size: 14px;
   line-height: 1;
   margin-top: 82px;
 }
 
-aside h1 {
+.form form {
+  margin-bottom: 20px;
+}
+
+.form h1 {
   text-transform: uppercase;
   font-size: 36px;
   margin-bottom: 20px;
   line-height: 1;
 }
 
-aside label {
+.form label {
   font-size: 20px;
-  color: #FFFEDB;
+  color: #fffedb;
   display: block;
   text-transform: uppercase;
   font-weight: 700;
 }
 
-aside input[type="text"], aside textarea {
+.form input[type="text"],
+.form textarea {
   border: 2px solid white;
   background: white;
   font-size: 20px;
@@ -197,25 +215,27 @@ aside input[type="text"], aside textarea {
   width: calc(100% - 30px);
 }
 
-aside input[type="text"]:focus, aside input[type="text"]:active, aside textarea:focus, aside textarea:active {
+.form input[type="text"]:focus, .form input[type="text"]:active,
+.form textarea:focus,
+.form textarea:active {
   border: 2px solid #f98117;
   outline: none;
 }
 
-aside textarea {
+.form textarea {
   resize: none;
   height: 300px;
 }
 
-aside fieldset {
+.form fieldset {
   border: none;
 }
 
-aside form div {
+.form form div {
   text-align: right;
 }
 
-aside .add-task {
+.form .add-task {
   background: #f98117;
   color: white;
   font-weight: 700;
@@ -227,13 +247,14 @@ aside .add-task {
   cursor: pointer;
 }
 
-aside .add-task:hover, aside .add-task :focus {
-  border: 2px solid #E35736;
+.form .add-task:hover,
+.form .add-task :focus {
+  border: 2px solid #e35736;
   -webkit-transform: scale(1.05);
           transform: scale(1.05);
 }
 
-aside .cancel-task {
+.form .cancel-task {
   background: none;
   border: none;
   color: #f98117;
@@ -242,7 +263,7 @@ aside .cancel-task {
   cursor: pointer;
 }
 
-aside .cancel-task:hover {
+.form .cancel-task:hover {
   text-decoration: underline;
 }
 
@@ -264,5 +285,50 @@ aside .cancel-task:hover {
   position: absolute;
   margin: 0;
   width: 190px;
+}
+
+@media print {
+  menu,
+  .form {
+    display: none;
+  }
+  .list {
+    background: none;
+    color: #f98117;
+  }
+  .list h2,
+  .list h1 {
+    color: #f98117;
+    width: 90%;
+    max-width: 1000px;
+  }
+  .list h1 {
+    margin-bottom: 25px;
+  }
+  .list h1::after {
+    content: "";
+    display: block;
+    border: 1px solid #f98117;
+    margin-top: 25px;
+  }
+  .list ul {
+    width: 90%;
+    max-width: 1000px;
+  }
+  .list .item {
+    margin-bottom: 40px;
+  }
+  .list .item label {
+    border-color: #f98117;
+  }
+  .list .item label::after {
+    background-color: #ea8f4a;
+  }
+  .list .item .item-description {
+    color: darkslategray;
+  }
+  .toggle-form {
+    display: none;
+  }
 }
 /*# sourceMappingURL=styles.css.map */

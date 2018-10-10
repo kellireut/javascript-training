@@ -1,10 +1,10 @@
 * {
-    box-sizing: content-box; 
-    margin: 0; 
+    box-sizing: content-box;
+    margin: 0;
     padding: 0;
-    font-family: 'PT Sans Narrow', sans-serif;
-    letter-spacing: .02em; 
-    transition: all .2s ease;
+    font-family: "PT Sans Narrow", sans-serif;
+    letter-spacing: 0.02em;
+    transition: all 0.2s ease;
 }
 
 li {
@@ -12,221 +12,21 @@ li {
 }
 
 // COLORS
-$dark-orange: #E35736; 
-$orange: #f98117; 
-$medium-orange: #EA8F4A;
-$yellow-orange: #EEAF5D; 
-$yellow: #FEFD89; 
-$light-yellow: #FCF4A7; 
-$almost-white: #FFFEDB; 
-
-
+$dark-orange: #e35736;
+$orange: #f98117;
+$medium-orange: #ea8f4a;
+$yellow-orange: #eeaf5d;
+$yellow: #fefd89;
+$light-yellow: #fcf4a7;
+$almost-white: #fffedb;
 
 body {
-    display: flex; 
+    display: flex;
     height: 100vh;
 }
 
-menu {
-    flex-basis: 90px; 
-    background: linear-gradient($dark-orange, $medium-orange);
-    ul {
-        display: flex; 
-        flex-direction: column;
-        margin-top: 10px;
-    }
-    li {
-        margin: 12px 20px;
-        text-align: center;
-        &::after {
-            content: ""; 
-            display: block;
-            width: 100%;
-            border-bottom: 1px solid rgba(255, 255, 255, .6);
-            margin-top: 15px;
-        }
-        &:last-of-type img {
-            transform: scale(.75);
-            transform-origin: 50% 0;
-        }
-        &:last-of-type::after {
-            display: none;
-        }
-    }
+@import "menu.scss";
+@import "main.scss";
+@import "form.scss";
 
-}
-
-main {
-    background: linear-gradient(.4turn, $orange, $medium-orange, #F9E080);
-    flex-grow: 1;
-    color: $yellow;
-    overflow: scroll;
-    position: relative;
-    > * {
-        max-width: 500px;
-        display: block;
-        margin: 0 auto;
-    }
-    h2 {
-        font-size: 18px;
-        font-weight: 400;
-        margin-top: 75px;
-    }
-    h1 {
-        text-transform: uppercase; 
-        font-size: 55px; 
-        line-height: 1;
-        font-weight: 700;
-        margin-bottom: 20px;
-    }
-    
-}
-
-.item {
-    position: relative;
-    margin-bottom: 20px;
-    display: flex;
-    label {
-        width: 35px; 
-        height: 35px; 
-        border: 1px solid $yellow; 
-        border-radius: 5px;
-        flex-shrink: 0;
-        cursor: pointer;
-        &::after {
-            content: "";
-            display: inline-block; 
-
-            background-image: url(../assets/x.svg);
-            height: 25px;
-            width: 25px;
-            margin: 5px;
-        }
-    }
-    
-    input[type="checkbox"] {
-        opacity: 0;
-        position: absolute;
-        top: 0;
-        left: 0;
-    }
-    input[type="checkbox"] + label::after {
-        content: none;
-    }
-    input[type="checkbox"]:checked + label::after {
-        content: "" ; 
-    }
-
-    div {
-        padding-left: 20px;
-    }
-    .item-title {
-        font-size: 28px; 
-        padding: 4px 0;
-        font-weight: 700;
-    }
-    .item-description {
-        font-size: 16px; 
-        color: white; 
-        line-height: 1.2em;
-    }   
-}
-
-aside {
-    flex-basis: 300px;
-    background: linear-gradient(#F5D47A, $light-yellow);
-    color: $orange;
-    overflow: scroll;
-    position: relative;
-    > * {
-        margin-left: 20px;
-        margin-right: 20px;
-    }
-    > p {
-        font-size: 14px; 
-        line-height: 1; 
-        margin-top: 82px;
-    }
-    h1 {
-        text-transform: uppercase; 
-        font-size: 36px; 
-        margin-bottom: 20px;
-        line-height: 1;
-    }
-    label {
-        font-size: 20px;
-        color: $almost-white;
-        display: block; 
-        text-transform: uppercase;
-        font-weight: 700;
-    }
-    input[type="text"], textarea {
-        border: 2px solid white; 
-        background: white; 
-        font-size: 20px; 
-        color: $orange; 
-        border-radius: 3px;
-        padding: 10px;
-        margin-bottom: 20px;
-        width: calc(100% - 30px);
-        &:focus, &:active {
-            border: 2px solid $orange;
-            outline: none;
-        }
-    }
-    textarea {
-        resize: none; 
-        height: 300px;
-    }
-    fieldset {
-        border: none;
-    }
-    form div {
-        text-align: right;
-    }
-    .add-task {
-        background: $orange; 
-        color: white; 
-        font-weight: 700; 
-        font-size: 20px;
-        padding: 5px 12px; 
-        border: none; 
-        border-radius: 3px; 
-        border: 2px solid transparent;
-        cursor: pointer;
-        &:hover, :focus {
-            border: 2px solid $dark-orange;
-            transform: scale(1.05);
-        }
-    }
-    .cancel-task {
-        background: none; 
-        border: none;
-        color: $orange;
-        font-size: 14px;
-        margin: 0 12px;
-        cursor: pointer;
-        &:hover {
-            text-decoration: underline;
-        }
-    }
-}
-
-.toggle-form {
-    position: absolute;
-    background: none; 
-    border: none;
-    bottom: 20px;
-    right: 0px;
-    img {
-        width: 25px;
-    }
-}
-
-#clock {
-    bottom: 0; 
-    right: 0; 
-    position: absolute;
-    margin: 0;
-    width: 190px;
-}
+@import "print.scss";
