@@ -1,0 +1,46 @@
+@media print {
+    menu,
+    .form {
+        display: none;
+    }
+    .list {
+        background: none;
+        color: $orange;
+        h2,
+        h1 {
+            color: $orange;
+            width: 90%;
+            max-width: 1000px;
+        }
+        h1 {
+            // padding-bottom: 25px;
+            margin-bottom: 25px;
+            &::after {
+                content: "";
+                display: block;
+                border: 1px solid $orange;
+                margin-top: 25px;
+            }
+        }
+
+        ul {
+            width: 90%;
+            max-width: 1000px;
+        }
+        .item {
+            margin-bottom: 40px;
+            label {
+                border-color: $orange;
+                &::after {
+                    background-color: $medium-orange;
+                }
+            }
+            .item-description {
+                color: darkslategray;
+            }
+        }
+    }
+    .toggle-form {
+        display: none;
+    }
+}
